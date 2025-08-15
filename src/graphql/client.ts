@@ -30,7 +30,7 @@ interface SendMessageResponse {
   };
 }
 
-interface SendMessageInput {
+interface MessageInput {
   message: string;
   model?: string;
 }
@@ -94,9 +94,9 @@ class GraphQLClient {
   }
 
   // 发送消息
-  async sendMessage(input: SendMessageInput): Promise<SendMessageResponse['sendMessage']> {
+  async sendMessage(input: MessageInput): Promise<SendMessageResponse['sendMessage']> {
     const mutation = `
-      mutation SendMessage($input: SendMessageInput!) {
+      mutation SendMessage($input: MessageInput!) {
         sendMessage(input: $input) {
           id
           message
@@ -127,4 +127,4 @@ const graphqlClient = new GraphQLClient();
 
 export default graphqlClient;
 export { GraphQLClient };
-export type { SendMessageInput, ChatResponse, SendMessageResponse };
+export type { MessageInput, ChatResponse, SendMessageResponse };
