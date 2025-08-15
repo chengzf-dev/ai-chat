@@ -38,7 +38,7 @@ interface MessageInput {
 class GraphQLClient {
   private baseUrl: string;
 
-  constructor(baseUrl: string = 'http://localhost:8787') {
+  constructor(baseUrl: string = process.env.REACT_APP_WORKERS_URL || '') {
     this.baseUrl = baseUrl;
   }
 
