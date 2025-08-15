@@ -10,7 +10,7 @@ interface Message {
   timestamp: Date;
 }
 
-function App(): JSX.Element {
+function App(): React.JSX.Element {
   // 状态管理
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, text: '你好！我是AI助手，有什么可以帮助你的吗？', sender: 'ai', timestamp: new Date() }
